@@ -27,6 +27,7 @@ public class RJoinReduce extends Reducer<Text, RJoinBean, RJoinBean, NullWritabl
             } else if (flag.startsWith("order")){
                 RJoinBean dest = new RJoinBean();
                 try {
+                    //深拷贝和浅拷贝问题
                     BeanUtils.copyProperties(dest,value);
                 } catch (Exception e) {
                     e.printStackTrace();
